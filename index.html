@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KIZUME STORE</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <h1>KIZUME STORE</h1>
+    <p class="creator">Dibuat oleh: <span>Candra Winata</span></p>
+
+    <button class="dark-toggle" onclick="toggleDarkMode()">🌙</button>
+</header>
+
+<div class="tabs">
+    <button class="tab active" data-tab="ff" onclick="showTab('ff')">Free Fire</button>
+    <button class="tab" data-tab="ml" onclick="showTab('ml')">Mobile Legends</button>
+</div>
+
+<div class="search-box">
+    <input type="text" placeholder="Cari akun FF / ML / PUBG..."
+    onkeyup="searchAkun(this.value)">
+</div>
+
+<main>
+
+<!-- FF -->
+<section id="ff" class="section active">
+<div class="akun-card" data-nama="ff sultan heroic">
+    <div class="slider">
+        <img src="ff1.png">
+        <img src="ff2.png">
+        <img src="ff3.png">
+        <img src="ff4.png">
+    </div>
+    <div class="info">
+        <h3>STOKBPRIBADI</h3>
+        <p>Kode: PRIB56</p>
+        <p>Level.41 Rank-Platinum Vault.32 Emote Legend 2</p>
+
+        <div class="harga-box">
+            <span class="harga-asli">Rp 30.000</span>
+            <span class="harga-diskon">Rp 24.000</span>
+        </div>
+
+        <button onclick="openPopup('PRIB56','Level.41,Vault.32, Platinum',30000)">
+            Beli
+        </button>
+    </div>
+</div>
+</section>
+
+<!-- ML -->
+<section id="ml" class="section">
+<div class="akun-card" data-nama="ml mythic epic">
+    <div class="slider">
+        <img src="img/ml1.jpg">
+        <img src="img/ml2.jpg">
+    </div>
+    <div class="info">
+        <h3>ML KOSONG</h3>
+        <p>Kode: -</p>
+        <p>Spek:-/p>
+
+        <div class="harga-box">
+            <span class="harga-asli">Rp 0</span>
+            <span class="harga-diskon">Rp 0</span>
+        </div>
+
+        <button onclick="openPopup('ML002','Hero 90+, Skin Epic, Mythic',350000)">
+            Beli
+        </button>
+    </div>
+</div>
+</section>
+</main>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+<div class="popup-box">
+    <span class="close" onclick="closePopup()">×</span>
+
+    <h3>Detail Pembelian</h3>
+    <p>Kode Akun: <b id="pKode"></b></p>
+    <p>Spek: <b id="pSpek"></b></p>
+
+    <p>
+        Harga Asli: <s>Rp <span id="pHarga"></span></s><br>
+        Harga Akhir:
+        <span class="harga-diskon">Rp <span id="hargaAkhir"></span></span>
+    </p>
+
+    <input type="text" id="diskonInput" placeholder="Kode Diskon (HEMAT20)">
+    <button class="btn-secondary" onclick="applyDiskon()">Gunakan Diskon</button>
+
+    <button class="btn-wa" onclick="beliWhatsApp()">Beli via WhatsApp</button>
+</div>
+</div>
+
+<a href="https://wa.me/6285882369852" target="_blank" class="floating-wa">
+    💬
+</a>
+
+<footer class="footer">
+    <small>© 2025 Candra Winata. All rights reserved.</small>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
